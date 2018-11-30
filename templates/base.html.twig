@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="Université Virtuelle de Côte d'Ivoire" content="Plateforme">
+        <link rel="icon" href="images/favicon.png" type="image/png">
+        <title>{% block title %} Bienvenue | Stage UVCI {% endblock %}</title>
+        {% block stylesheets %} 
+        {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="{{ asset('/extra/modern-business.css') }}"> 
+        {% endblock %}
+    </head>
+    <body class="bg-light">
+        {% block nav %}
+        <div class="container">
+          <img  class="img-fluid rounded" src="{{ asset('images/ban.png') }}" height="100%">
+        </div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-white bg-white fixed-top" style="box-shadow: 2px 2px 12px #555;">
+      <div class="container">
+        <a class="navbar-brand" href="{{ path('homepage') }}">
+        	<img src="images/logo.png"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <span class=""></span><a class="nav-link" href="{{ path('homepage') }}">
+                <i class="fa fa-home"></i> Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ path('services') }}"><i class="fa fa-laptop"></i> Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="{{ path('stages') }}">
+              <i class="fa fa-clone"></i> Stages</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link" href="{{ path('about') }}"><i class="fa fa-book"></i> A propos</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ path('login') }}"><i class="fa fa-user-circle"></i> Connexion</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block footer %}
+            <footer class="py-5 bg-dark">
+                    <div class="container">
+                        <p class="m-0 text-center text-white">Université Virtuelle de Côte d'Ivoire - Tous droits réservés.</p>
+                    </div>
+             </footer>
+        {% endblock %}
+        {% block javascripts %} 
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        {{ encore_entry_script_tags('app') }} 
+        {% endblock %}
+    </body>
+</html>
